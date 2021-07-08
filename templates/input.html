@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Madlibs input{% endblock %}
+
+    {% block content%}
+    <h1>Your input for {{title}}</h1>
+    <form action="/story">
+        {% for input in inputs%}
+        <div>
+        <label for="{{input}}">{{input}}</label>
+        <input id="{{input}}" type="text" name="{{input}}">
+        </div>
+        {% endfor %}
+        <input type="hidden" name="story_id" value="{{story_id}}">
+        <button>Submit</button>
+    </form>
+    {% endblock %}
+    
